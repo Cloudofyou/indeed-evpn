@@ -1,0 +1,57 @@
+# Created by Topology-Converter v4.7.1
+#    Template Revision: v4.7.1
+#    https://github.com/cumulusnetworks/topology_converter
+#    using topology data from: ./cldemo2.dot
+
+
+
+
+[oob-switch]
+oob-mgmt-switch ansible_host=192.168.200.1
+
+
+
+
+
+
+
+
+
+[spine]
+core ansible_host=192.168.200.10
+coreaggfab ansible_host=192.168.200.11
+vtepgw1 ansible_host=192.168.200.20
+vtepgw2 ansible_host=192.168.200.21
+sspine01 ansible_host=192.168.200.30
+sspine02 ansible_host=192.168.200.31
+sspine03 ansible_host=192.168.200.32
+sspine04 ansible_host=192.168.200.33
+vtepgw3 ansible_host=192.168.200.40
+vtepgw4 ansible_host=192.168.200.41
+vtepgw5 ansible_host=192.168.200.42
+vtepgw6 ansible_host=192.168.200.43
+podxspine01 ansible_host=192.168.200.44
+podxspine02 ansible_host=192.168.200.45
+pod1vdx ansible_host=192.168.200.50
+pod2vdx ansible_host=192.168.200.51
+pod3vdx ansible_host=192.168.200.52
+pod4vdx ansible_host=192.168.200.53
+podxtor01 ansible_host=192.168.200.54
+podxtor02 ansible_host=192.168.200.55
+
+
+
+
+
+[host]
+server01 ansible_host=192.168.200.131
+server02 ansible_host=192.168.200.132
+server03 ansible_host=192.168.200.133
+server04 ansible_host=192.168.200.134
+server05 ansible_host=192.168.200.135
+
+
+[all:vars]
+ansible_user=cumulus
+ansible_ssh_pass=CumulusLinux!
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'

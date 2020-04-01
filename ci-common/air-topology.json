@@ -1,0 +1,1560 @@
+{
+    "name": "Cumulus In The Cloud Demo",
+    "nodes": [
+        {
+            "name": "oob-mgmt-switch",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:91"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp4"
+                },
+                {
+                    "name": "swp5"
+                },
+                {
+                    "name": "swp6"
+                },
+                {
+                    "name": "swp7"
+                },
+                {
+                    "name": "swp8"
+                },
+                {
+                    "name": "swp9"
+                },
+                {
+                    "name": "swp10"
+                },
+                {
+                    "name": "swp11"
+                },
+                {
+                    "name": "swp12"
+                },
+                {
+                    "name": "swp13"
+                },
+                {
+                    "name": "swp14"
+                },
+                {
+                    "name": "swp15"
+                },
+                {
+                    "name": "swp16"
+                },
+                {
+                    "name": "swp17"
+                },
+                {
+                    "name": "swp18"
+                },
+                {
+                    "name": "swp19"
+                },
+                {
+                    "name": "swp20"
+                },
+                {
+                    "name": "swp21"
+                },
+                {
+                    "name": "swp22"
+                },
+                {
+                    "name": "swp23"
+                }
+            ]
+        },
+        {
+            "name": "oob-mgmt-server",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "outbound": true
+                },
+                {
+                    "name": "eth1"
+                }
+            ]
+        },
+        {
+            "name": "netq-ts",
+            "os": "",
+            "memory": 8192,
+            "storage": 10,
+            "cpu": 4,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:80"
+                },
+                {
+                    "name": "eth1",
+                    "outbound": true
+                }
+            ]
+        },
+        {
+            "name": "spine01",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:82"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp4"
+                },
+                {
+                    "name": "swp5"
+                },
+                {
+                    "name": "swp6"
+                }
+            ]
+        },
+        {
+            "name": "spine02",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:92"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp4"
+                },
+                {
+                    "name": "swp5"
+                },
+                {
+                    "name": "swp6"
+                }
+            ]
+        },
+        {
+            "name": "spine03",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:70"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp4"
+                },
+                {
+                    "name": "swp5"
+                },
+                {
+                    "name": "swp6"
+                }
+            ]
+        },
+        {
+            "name": "spine04",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:6c"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp4"
+                },
+                {
+                    "name": "swp5"
+                },
+                {
+                    "name": "swp6"
+                }
+            ]
+        },
+        {
+            "name": "fw1",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:8c"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                }
+            ]
+        },
+        {
+            "name": "fw2",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:8e"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                }
+            ]
+        },
+        {
+            "name": "leaf01",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:7a"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp49"
+                },
+                {
+                    "name": "swp50"
+                },
+                {
+                    "name": "swp51"
+                },
+                {
+                    "name": "swp52"
+                },
+                {
+                    "name": "swp53"
+                },
+                {
+                    "name": "swp54"
+                }
+            ]
+        },
+        {
+            "name": "leaf02",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:78"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp49"
+                },
+                {
+                    "name": "swp50"
+                },
+                {
+                    "name": "swp51"
+                },
+                {
+                    "name": "swp52"
+                },
+                {
+                    "name": "swp53"
+                },
+                {
+                    "name": "swp54"
+                }
+            ]
+        },
+        {
+            "name": "leaf03",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:84"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp49"
+                },
+                {
+                    "name": "swp50"
+                },
+                {
+                    "name": "swp51"
+                },
+                {
+                    "name": "swp52"
+                },
+                {
+                    "name": "swp53"
+                },
+                {
+                    "name": "swp54"
+                }
+            ]
+        },
+        {
+            "name": "leaf04",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:8a"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp49"
+                },
+                {
+                    "name": "swp50"
+                },
+                {
+                    "name": "swp51"
+                },
+                {
+                    "name": "swp52"
+                },
+                {
+                    "name": "swp53"
+                },
+                {
+                    "name": "swp54"
+                }
+            ]
+        },
+        {
+            "name": "border01",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:74"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp4"
+                },
+                {
+                    "name": "swp49"
+                },
+                {
+                    "name": "swp50"
+                },
+                {
+                    "name": "swp51"
+                },
+                {
+                    "name": "swp52"
+                },
+                {
+                    "name": "swp53"
+                },
+                {
+                    "name": "swp54"
+                }
+            ]
+        },
+        {
+            "name": "border02",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:7c"
+                },
+                {
+                    "name": "swp1"
+                },
+                {
+                    "name": "swp2"
+                },
+                {
+                    "name": "swp3"
+                },
+                {
+                    "name": "swp4"
+                },
+                {
+                    "name": "swp49"
+                },
+                {
+                    "name": "swp50"
+                },
+                {
+                    "name": "swp51"
+                },
+                {
+                    "name": "swp52"
+                },
+                {
+                    "name": "swp53"
+                },
+                {
+                    "name": "swp54"
+                }
+            ]
+        },
+        {
+            "name": "server01",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:7e"
+                },
+                {
+                    "name": "eth1"
+                },
+                {
+                    "name": "eth2"
+                }
+            ]
+        },
+        {
+            "name": "server02",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:6e"
+                },
+                {
+                    "name": "eth1"
+                },
+                {
+                    "name": "eth2"
+                }
+            ]
+        },
+        {
+            "name": "server03",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:90"
+                },
+                {
+                    "name": "eth1"
+                },
+                {
+                    "name": "eth2"
+                }
+            ]
+        },
+        {
+            "name": "server04",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:6a"
+                },
+                {
+                    "name": "eth1"
+                },
+                {
+                    "name": "eth2"
+                }
+            ]
+        },
+        {
+            "name": "server05",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:88"
+                },
+                {
+                    "name": "eth1"
+                },
+                {
+                    "name": "eth2"
+                }
+            ]
+        },
+        {
+            "name": "server06",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:86"
+                },
+                {
+                    "name": "eth1"
+                },
+                {
+                    "name": "eth2"
+                }
+            ]
+        },
+        {
+            "name": "server07",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:76"
+                },
+                {
+                    "name": "eth1"
+                },
+                {
+                    "name": "eth2"
+                }
+            ]
+        },
+        {
+            "name": "server08",
+            "os": "",
+            "memory": 1024,
+            "storage": 10,
+            "cpu": 1,
+            "interfaces": [
+                {
+                    "name": "eth0",
+                    "mac_address": "44:38:39:00:01:72"
+                },
+                {
+                    "name": "eth1"
+                },
+                {
+                    "name": "eth2"
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "interfaces": [
+                {
+                    "node": "spine01",
+                    "interface": "swp1"
+                },
+                {
+                    "node": "leaf01",
+                    "interface": "swp51"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine02",
+                    "interface": "swp1"
+                },
+                {
+                    "node": "leaf01",
+                    "interface": "swp52"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine03",
+                    "interface": "swp1"
+                },
+                {
+                    "node": "leaf01",
+                    "interface": "swp53"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine04",
+                    "interface": "swp1"
+                },
+                {
+                    "node": "leaf01",
+                    "interface": "swp54"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine01",
+                    "interface": "swp2"
+                },
+                {
+                    "node": "leaf02",
+                    "interface": "swp51"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine02",
+                    "interface": "swp2"
+                },
+                {
+                    "node": "leaf02",
+                    "interface": "swp52"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine03",
+                    "interface": "swp2"
+                },
+                {
+                    "node": "leaf02",
+                    "interface": "swp53"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine04",
+                    "interface": "swp2"
+                },
+                {
+                    "node": "leaf02",
+                    "interface": "swp54"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine01",
+                    "interface": "swp3"
+                },
+                {
+                    "node": "leaf03",
+                    "interface": "swp51"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine02",
+                    "interface": "swp3"
+                },
+                {
+                    "node": "leaf03",
+                    "interface": "swp52"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine03",
+                    "interface": "swp3"
+                },
+                {
+                    "node": "leaf03",
+                    "interface": "swp53"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine04",
+                    "interface": "swp3"
+                },
+                {
+                    "node": "leaf03",
+                    "interface": "swp54"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine01",
+                    "interface": "swp4"
+                },
+                {
+                    "node": "leaf04",
+                    "interface": "swp51"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine02",
+                    "interface": "swp4"
+                },
+                {
+                    "node": "leaf04",
+                    "interface": "swp52"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine03",
+                    "interface": "swp4"
+                },
+                {
+                    "node": "leaf04",
+                    "interface": "swp53"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine04",
+                    "interface": "swp4"
+                },
+                {
+                    "node": "leaf04",
+                    "interface": "swp54"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine01",
+                    "interface": "swp5"
+                },
+                {
+                    "node": "border01",
+                    "interface": "swp51"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine02",
+                    "interface": "swp5"
+                },
+                {
+                    "node": "border01",
+                    "interface": "swp52"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine03",
+                    "interface": "swp5"
+                },
+                {
+                    "node": "border01",
+                    "interface": "swp53"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine04",
+                    "interface": "swp5"
+                },
+                {
+                    "node": "border01",
+                    "interface": "swp54"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine01",
+                    "interface": "swp6"
+                },
+                {
+                    "node": "border02",
+                    "interface": "swp51"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine02",
+                    "interface": "swp6"
+                },
+                {
+                    "node": "border02",
+                    "interface": "swp52"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine03",
+                    "interface": "swp6"
+                },
+                {
+                    "node": "border02",
+                    "interface": "swp53"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine04",
+                    "interface": "swp6"
+                },
+                {
+                    "node": "border02",
+                    "interface": "swp54"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf01",
+                    "interface": "swp1"
+                },
+                {
+                    "node": "server01",
+                    "interface": "eth1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf01",
+                    "interface": "swp2"
+                },
+                {
+                    "node": "server02",
+                    "interface": "eth1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf01",
+                    "interface": "swp3"
+                },
+                {
+                    "node": "server03",
+                    "interface": "eth1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf02",
+                    "interface": "swp1"
+                },
+                {
+                    "node": "server01",
+                    "interface": "eth2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf02",
+                    "interface": "swp2"
+                },
+                {
+                    "node": "server02",
+                    "interface": "eth2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf02",
+                    "interface": "swp3"
+                },
+                {
+                    "node": "server03",
+                    "interface": "eth2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf03",
+                    "interface": "swp1"
+                },
+                {
+                    "node": "server04",
+                    "interface": "eth1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf03",
+                    "interface": "swp2"
+                },
+                {
+                    "node": "server05",
+                    "interface": "eth1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf03",
+                    "interface": "swp3"
+                },
+                {
+                    "node": "server06",
+                    "interface": "eth1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf04",
+                    "interface": "swp1"
+                },
+                {
+                    "node": "server04",
+                    "interface": "eth2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf04",
+                    "interface": "swp2"
+                },
+                {
+                    "node": "server05",
+                    "interface": "eth2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf04",
+                    "interface": "swp3"
+                },
+                {
+                    "node": "server06",
+                    "interface": "eth2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border01",
+                    "interface": "swp1"
+                },
+                {
+                    "node": "server07",
+                    "interface": "eth1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border01",
+                    "interface": "swp2"
+                },
+                {
+                    "node": "server08",
+                    "interface": "eth1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border01",
+                    "interface": "swp3"
+                },
+                {
+                    "node": "fw1",
+                    "interface": "swp1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border01",
+                    "interface": "swp4"
+                },
+                {
+                    "node": "fw2",
+                    "interface": "swp1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border02",
+                    "interface": "swp1"
+                },
+                {
+                    "node": "server07",
+                    "interface": "eth2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border02",
+                    "interface": "swp2"
+                },
+                {
+                    "node": "server08",
+                    "interface": "eth2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border02",
+                    "interface": "swp3"
+                },
+                {
+                    "node": "fw1",
+                    "interface": "swp2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border02",
+                    "interface": "swp4"
+                },
+                {
+                    "node": "fw2",
+                    "interface": "swp2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf01",
+                    "interface": "swp49"
+                },
+                {
+                    "node": "leaf02",
+                    "interface": "swp49"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf01",
+                    "interface": "swp50"
+                },
+                {
+                    "node": "leaf02",
+                    "interface": "swp50"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf03",
+                    "interface": "swp49"
+                },
+                {
+                    "node": "leaf04",
+                    "interface": "swp49"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf03",
+                    "interface": "swp50"
+                },
+                {
+                    "node": "leaf04",
+                    "interface": "swp50"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border01",
+                    "interface": "swp49"
+                },
+                {
+                    "node": "border02",
+                    "interface": "swp49"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border01",
+                    "interface": "swp50"
+                },
+                {
+                    "node": "border02",
+                    "interface": "swp50"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "oob-mgmt-server",
+                    "interface": "eth1"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp1"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "server01",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp2"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "server02",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp3"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "server03",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp4"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "server04",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp5"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "server05",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp6"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "server06",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp7"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "server07",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp8"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "server08",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp9"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf01",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp10"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf02",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp11"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf03",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp12"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "leaf04",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp13"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine01",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp14"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine02",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp15"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine03",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp16"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "spine04",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp17"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "fw1",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp18"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "fw2",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp19"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border01",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp20"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "border02",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp21"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "netq-ts",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp22"
+                }
+            ]
+        },
+        {
+            "interfaces": [
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "eth0"
+                },
+                {
+                    "node": "oob-mgmt-switch",
+                    "interface": "swp23"
+                }
+            ]
+        }
+    ],
+    "documentation": "# Getting started\n\n**Connection details**\n\nUse the browser based terminal or use SSH from your favorite terminal emulator:\n\n[ssh -p {{ oob_ssh_port }} cumulus@{{ host }}](ssh://cumulus@{{ host }}:{{ oob_ssh_port }})\n\n**Username and Password**\n\nThe default username/password for all logins is `cumulus/CumulusLinux!`.\n\n**Out of Band Management Server**\n\nThe oob-mgmt-server is the access point to all nodes within this simulation. After logging into the oob-mgmt-server using the default username/password, jump to any other node by using SSH and the hostname. For example:\n\n```\ncumulus@oob-mgmt-server~$ ssh leaf01\n```\n\nThe `oob-mgmt-server` has a few applications pre-installed like SSH, python, ansible, DHCP server, and a web server. This server doubles as our ZTP server and can run any applications you would like to test by installing them from `sudo apt-get install <app>`.\n\n---\n# Using Cumulus Linux\n**Configuration Options**\n\n*Network Command Line Utility*\n\nFirst enter `ssh leaf01` on oob-mgmt-server to SSH to a leaf01. Use `net` to navigate around a single switch. `net help` shows a help menu for using the net command line utility (NCLU). NCLU resides in the Linux user space and provides consistent access to networking commands directly through bash, making configuration and troubleshooting simple and easy; no need to edit files or enter modes and sub-modes.\n```\ncumulus@leaf01:mgmt-vrf:~$ net help\nUsage:\n    # net <COMMAND> [<ARGS>] [help]\n    #\n    # net is a command line utility for networking on Cumulus Linux switches.\n    #\n    # COMMANDS are listed below and have context specific arguments which can\n    # be explored by typing \"<TAB>\" or \"help\" anytime while using net.\n    #\n    # Use \"man net\" for a more comprehensive overview.\n\n    net abort\n    net commit [verbose] [confirm [<number-seconds>]] [description <wildcard>]\n    net commit delete (<number>|<number-range>)\n    net commit permanent <wildcard>\n    net del all\n    net help [verbose]\n    net pending [json]\n    net rollback (<number>|last)\n    net rollback description <wildcard-snapshot>\n    net show commit (history|<number>|<number-range>|last)\n    net show rollback (<number>|last)\n    net show rollback description <wildcard-snapshot>\n    net show configuration [commands|files|acl|bgp|multicast|ospf|ospf6]\n    net show configuration interface [<interface>] [json]\n\nOptions:\n    # Help commands\n    help     : context sensitive information; see section below\n    example  : detailed examples of common workflows\n\n    # Configuration commands\n    add      : add/modify configuration\n    del      : remove configuration\n\n    # Commit buffer commands\n    abort    : abandon changes in the commit buffer\n    commit   : apply the commit buffer to the system\n    pending  : show changes staged in the commit buffer\n    rollback : revert to a previous configuration state\n\n    # Status commands\n    show     : show command output\n    clear    : clear counters, BGP neighbors, etc\n\n    <number-seconds> : Number of seconds\n```\n\n---\n# Configure Linux Sub-system Directly\n\n**ifupdown2**\n\nThe 2 most important services to note are `networking` and `frr`. The networking service Cumulus uses is `ifupdown2`. ifupdown2's configuration location is at `/etc/network/interfaces`. Edit this file with your favorite editor (VIM/NANO/PICO). Then you'll need to `reload` the service `gracefully` using `ifreload -a`. `gracefully` means skipping configurations that do not change in order to preserve state.\n\n**frr**\n\nFRR or Free Range Routing is the suite of services Cumulus uses for routing. FRR's configuration file is located at `/etc/frr/frr.conf`. FRR can also be reloaded `gracefully` like ifupdown2 with `ifreload -a`.\n\n"
+}
+

@@ -1,0 +1,68 @@
+# /etc/dhcp/dhcpd.hosts
+# Created by Topology-Converter v4.7.1
+#    Template Revision: v4.7.1
+#    https://github.com/cumulusnetworks/topology_converter
+#    using topology data from: ./cldemo2.dot
+
+group {
+
+  option domain-name-servers 192.168.200.254;
+  option domain-name "simulation";
+  option routers 192.168.200.254;
+  option www-server 192.168.200.254;
+  option default-url = "http://192.168.200.254/onie-installer";
+
+
+host oob-mgmt-switch {hardware ethernet 44:38:39:00:00:af; fixed-address 192.168.200.1; option host-name "oob-mgmt-switch"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host core {hardware ethernet 44:38:39:00:00:7e; fixed-address 192.168.200.10; option host-name "core"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host coreaggfab {hardware ethernet 44:38:39:00:00:80; fixed-address 192.168.200.11; option host-name "coreaggfab"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host vtepgw1 {hardware ethernet 44:38:39:00:00:82; fixed-address 192.168.200.20; option host-name "vtepgw1"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host vtepgw2 {hardware ethernet 44:38:39:00:00:84; fixed-address 192.168.200.21; option host-name "vtepgw2"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host sspine01 {hardware ethernet 44:38:39:00:00:86; fixed-address 192.168.200.30; option host-name "sspine01"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host sspine02 {hardware ethernet 44:38:39:00:00:88; fixed-address 192.168.200.31; option host-name "sspine02"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host sspine03 {hardware ethernet 44:38:39:00:00:8a; fixed-address 192.168.200.32; option host-name "sspine03"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host sspine04 {hardware ethernet 44:38:39:00:00:8c; fixed-address 192.168.200.33; option host-name "sspine04"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host vtepgw3 {hardware ethernet 44:38:39:00:00:8e; fixed-address 192.168.200.40; option host-name "vtepgw3"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host vtepgw4 {hardware ethernet 44:38:39:00:00:90; fixed-address 192.168.200.41; option host-name "vtepgw4"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host vtepgw5 {hardware ethernet 44:38:39:00:00:92; fixed-address 192.168.200.42; option host-name "vtepgw5"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host vtepgw6 {hardware ethernet 44:38:39:00:00:94; fixed-address 192.168.200.43; option host-name "vtepgw6"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host podxspine01 {hardware ethernet 44:38:39:00:00:96; fixed-address 192.168.200.44; option host-name "podxspine01"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host podxspine02 {hardware ethernet 44:38:39:00:00:98; fixed-address 192.168.200.45; option host-name "podxspine02"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host pod1vdx {hardware ethernet 44:38:39:00:00:9a; fixed-address 192.168.200.50; option host-name "pod1vdx"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host pod2vdx {hardware ethernet 44:38:39:00:00:9c; fixed-address 192.168.200.51; option host-name "pod2vdx"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host pod3vdx {hardware ethernet 44:38:39:00:00:9e; fixed-address 192.168.200.52; option host-name "pod3vdx"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host pod4vdx {hardware ethernet 44:38:39:00:00:a0; fixed-address 192.168.200.53; option host-name "pod4vdx"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host podxtor01 {hardware ethernet 44:38:39:00:00:a2; fixed-address 192.168.200.54; option host-name "podxtor01"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host podxtor02 {hardware ethernet 44:38:39:00:00:a4; fixed-address 192.168.200.55; option host-name "podxtor02"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host server01 {hardware ethernet 44:38:39:00:00:a6; fixed-address 192.168.200.131; option host-name "server01"; } 
+
+host server02 {hardware ethernet 44:38:39:00:00:a8; fixed-address 192.168.200.132; option host-name "server02"; } 
+
+host server03 {hardware ethernet 44:38:39:00:00:aa; fixed-address 192.168.200.133; option host-name "server03"; } 
+
+host server04 {hardware ethernet 44:38:39:00:00:ac; fixed-address 192.168.200.134; option host-name "server04"; } 
+
+host server05 {hardware ethernet 44:38:39:00:00:ae; fixed-address 192.168.200.135; option host-name "server05"; } 
+}#End of static host group
+

@@ -1,0 +1,75 @@
+Host core
+ User cumulus
+
+Host coreaggfab
+ User cumulus
+
+Host vtepgw1
+ User cumulus
+
+Host vtepgw2
+ User cumulus
+
+Host sspine01
+ User cumulus
+
+Host sspine02
+ User cumulus
+
+Host sspine03
+ User cumulus
+
+Host sspine04
+ User cumulus
+
+Host vtepgw3
+ User cumulus
+
+Host vtepgw4
+ User cumulus
+
+Host vtepgw5
+ User cumulus
+
+Host vtepgw6
+ User cumulus
+
+Host podxspine01
+ User cumulus
+
+Host podxspine02
+ User cumulus
+
+Host pod1vdx
+ User cumulus
+
+Host pod2vdx
+ User cumulus
+
+Host pod3vdx
+ User cumulus
+
+Host pod4vdx
+ User cumulus
+
+Host podxtor01
+ User cumulus
+
+Host podxtor02
+ User cumulus
+
+Host server01
+ User cumulus
+
+Host server02
+ User cumulus
+
+Host server03
+ User cumulus
+
+Host server04
+ User cumulus
+
+Host server05
+ User cumulus
+

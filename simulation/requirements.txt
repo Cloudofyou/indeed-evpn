@@ -1,0 +1,7 @@
+setuptools
+jinja2
+pydotplus
+ipaddress
+netaddr
+paramiko
+

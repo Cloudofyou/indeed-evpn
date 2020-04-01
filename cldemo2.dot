@@ -1,0 +1,112 @@
+graph dc {
+   "dummy" [function="fake"]
+   "oob-mgmt-switch"  [function="oob-switch" mgmt_ip="192.168.200.2" version="3.7.11" ssh_user="cumulus" ]
+   "oob-mgmt-server"  [function="oob-server" mgmt_ip="192.168.200.1" ssh_user="cumulus" ]
+   "netq-ts"   [function="host" mgmt_ip="192.168.200.250"  cpu="4" memory="8192" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/netq_server_config.sh"]
+
+   "spine01" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.21"]
+   "spine02" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.22"]
+   "spine03" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.23"]
+   "spine04" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.24"]
+   "fw1" [function="leaf" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.61"]
+   "fw2" [function="leaf" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.62"]
+   "leaf01" [function="leaf" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.11"]
+   "leaf02" [function="leaf" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.12"]
+   "leaf03" [function="leaf" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.13"]
+   "leaf04" [function="leaf" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.14"]
+   "border01" [function="exit" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.63"]
+   "border02" [function="exit" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.64"]
+   
+   "server01" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.31"]
+   "server02" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.32"]
+   "server03" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.33"]
+   "server04" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.34"]
+   "server05" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.35"]
+   "server06" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.36"]
+   "server07" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.37"]
+   "server08" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.38"]
+
+   "spine01":"swp1" -- "leaf01":"swp51"
+   "spine02":"swp1" -- "leaf01":"swp52"
+   "spine03":"swp1" -- "leaf01":"swp53"
+   "spine04":"swp1" -- "leaf01":"swp54"
+   "spine01":"swp2" -- "leaf02":"swp51"
+   "spine02":"swp2" -- "leaf02":"swp52"
+   "spine03":"swp2" -- "leaf02":"swp53"
+   "spine04":"swp2" -- "leaf02":"swp54"
+   "spine01":"swp3" -- "leaf03":"swp51"
+   "spine02":"swp3" -- "leaf03":"swp52"
+   "spine03":"swp3" -- "leaf03":"swp53"
+   "spine04":"swp3" -- "leaf03":"swp54"
+   "spine01":"swp4" -- "leaf04":"swp51"
+   "spine02":"swp4" -- "leaf04":"swp52"
+   "spine03":"swp4" -- "leaf04":"swp53"
+   "spine04":"swp4" -- "leaf04":"swp54"
+   "spine01":"swp5" -- "border01":"swp51"
+   "spine02":"swp5" -- "border01":"swp52"
+   "spine03":"swp5" -- "border01":"swp53"
+   "spine04":"swp5" -- "border01":"swp54"
+   "spine01":"swp6" -- "border02":"swp51"
+   "spine02":"swp6" -- "border02":"swp52"
+   "spine03":"swp6" -- "border02":"swp53"
+   "spine04":"swp6" -- "border02":"swp54"
+
+   "leaf01":"swp1" -- "server01":"eth1"
+   "leaf01":"swp2" -- "server02":"eth1"
+   "leaf01":"swp3" -- "server03":"eth1"   
+   "leaf02":"swp1" -- "server01":"eth2"
+   "leaf02":"swp2" -- "server02":"eth2"
+   "leaf02":"swp3" -- "server03":"eth2"
+   "leaf03":"swp1" -- "server04":"eth1"
+   "leaf03":"swp2" -- "server05":"eth1"
+   "leaf03":"swp3" -- "server06":"eth1"
+   "leaf04":"swp1" -- "server04":"eth2"
+   "leaf04":"swp2" -- "server05":"eth2"
+   "leaf04":"swp3" -- "server06":"eth2"
+
+   "border01":"swp1" -- "server07":"eth1"
+   "border01":"swp2" -- "server08":"eth1"
+   "border01":"swp3" -- "fw1":"swp1"
+   "border01":"swp4" -- "fw2":"swp1"
+   "border02":"swp1" -- "server07":"eth2"
+   "border02":"swp2" -- "server08":"eth2"
+   "border02":"swp3" -- "fw1":"swp2"
+   "border02":"swp4" -- "fw2":"swp2"
+
+   "leaf01":"swp49" -- "leaf02":"swp49"
+   "leaf01":"swp50" -- "leaf02":"swp50"
+   "leaf03":"swp49" -- "leaf04":"swp49"
+   "leaf03":"swp50" -- "leaf04":"swp50"
+   "border01":"swp49" -- "border02":"swp49"
+   "border01":"swp50" -- "border02":"swp50"
+
+   "oob-mgmt-server":"eth0" -- "dummy":"outbound"
+   "netq-ts":"eth1" -- "dummy":"outbound-netq-ts"
+   "fw1":"swp49" -- "dummy":"outbound-fw1"
+   "fw2":"swp49" -- "dummy":"outbound-fw2"
+
+   "oob-mgmt-server":"eth1" -- "oob-mgmt-switch":"swp1"
+   "server01":"eth0" -- "oob-mgmt-switch":"swp2" [left_mac="44:38:39:00:01:7e"]
+   "server02":"eth0" -- "oob-mgmt-switch":"swp3" [left_mac="44:38:39:00:01:6e"]
+   "server03":"eth0" -- "oob-mgmt-switch":"swp4" [left_mac="44:38:39:00:01:90"]
+   "server04":"eth0" -- "oob-mgmt-switch":"swp5" [left_mac="44:38:39:00:01:6a"]
+   "server05":"eth0" -- "oob-mgmt-switch":"swp6" [left_mac="44:38:39:00:01:88"]
+   "server06":"eth0" -- "oob-mgmt-switch":"swp7" [left_mac="44:38:39:00:01:86"]
+   "server07":"eth0" -- "oob-mgmt-switch":"swp8" [left_mac="44:38:39:00:01:76"]
+   "server08":"eth0" -- "oob-mgmt-switch":"swp9" [left_mac="44:38:39:00:01:72"]
+   "leaf01":"eth0" -- "oob-mgmt-switch":"swp10" [left_mac="44:38:39:00:01:7a"]
+   "leaf02":"eth0" -- "oob-mgmt-switch":"swp11" [left_mac="44:38:39:00:01:78"]
+   "leaf03":"eth0" -- "oob-mgmt-switch":"swp12" [left_mac="44:38:39:00:01:84"]
+   "leaf04":"eth0" -- "oob-mgmt-switch":"swp13" [left_mac="44:38:39:00:01:8a"]
+   "spine01":"eth0" -- "oob-mgmt-switch":"swp14" [left_mac="44:38:39:00:01:82"]
+   "spine02":"eth0" -- "oob-mgmt-switch":"swp15" [left_mac="44:38:39:00:01:92"]
+   "spine03":"eth0" -- "oob-mgmt-switch":"swp16" [left_mac="44:38:39:00:01:70"]
+   "spine04":"eth0" -- "oob-mgmt-switch":"swp17" [left_mac="44:38:39:00:01:6c"]
+   "fw1":"eth0" -- "oob-mgmt-switch":"swp18" [left_mac="44:38:39:00:01:8c"]
+   "fw2":"eth0" -- "oob-mgmt-switch":"swp19" [left_mac="44:38:39:00:01:8e"]
+   "border01":"eth0" -- "oob-mgmt-switch":"swp20" [left_mac="44:38:39:00:01:74"]
+   "border02":"eth0" -- "oob-mgmt-switch":"swp21" [left_mac="44:38:39:00:01:7c"]
+   "netq-ts":"eth0" -- "oob-mgmt-switch":"swp22" [left_mac="44:38:39:00:01:80"]
+   "oob-mgmt-switch":"eth0" -- "oob-mgmt-switch":"swp23" [left_mac="44:38:39:00:01:91"]
+}
+

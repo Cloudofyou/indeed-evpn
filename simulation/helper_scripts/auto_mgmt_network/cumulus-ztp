@@ -1,0 +1,83 @@
+#!/bin/bash
+# Created by Topology-Converter v4.7.1
+#    Template Revision: v4.7.1
+
+function error() {
+  echo -e "\e[0;33mERROR: The Zero Touch Provisioning script failed while running the command $BASH_COMMAND at line $BASH_LINENO.\e[0m" >&2
+}
+trap error ERR
+
+SSH_URL="http://192.168.200.254/authorized_keys"
+#Setup SSH key authentication for Ansible
+mkdir -p /home/cumulus/.ssh
+wget -O /home/cumulus/.ssh/authorized_keys $SSH_URL
+sed -i '/iface eth0/a \ vrf mgmt' /etc/network/interfaces
+cat <<EOT >> /etc/network/interfaces
+auto mgmt
+iface mgmt
+  address 127.0.0.1/8
+  vrf-table auto
+EOT
+
+echo "cumulus ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10_cumulus
+
+# purge netq 1.4
+apt -y purge cumulus-netq netq-agent netq-apps python-netq-lib
+
+# repo for netq
+echo "deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-latest" > /etc/apt/sources.list.d/netq.list
+
+#debian jessie repo to support the air agent
+echo 'deb http://deb.debian.org/debian/ jessie main' | tee -a /etc/apt/sources.list
+apt-get update -qy
+
+#install netq
+apt-get install ntpdate cumulus-netq -qy
+
+#install air-agent supporting packages
+apt-get install -yq build-essential libssl-dev libffi-dev python3-dev python3-setuptools git
+
+# configure netq
+netq config add agent server 192.168.200.250 vrf mgmt
+netq config restart agent
+
+netq config add cli server 192.168.200.250 vrf mgmt
+netq config restart cli
+
+cat << EOT > /etc/ntp.conf
+# /etc/ntp.conf, configuration for ntpd; see ntp.conf(5) for help
+tinker panic 0
+
+driftfile /var/lib/ntp/ntp.drift
+statistics loopstats peerstats clockstats
+filegen loopstats file loopstats type day enable
+filegen peerstats file peerstats type day enable
+filegen clockstats file clockstats type day enable
+
+server 192.168.200.1 iburst
+
+# By default, exchange time with everybody, but don't allow configuration.
+restrict -4 default kod notrap nomodify nopeer noquery
+restrict -6 default kod notrap nomodify nopeer noquery
+# Local users may interrogate the ntp server more closely.
+restrict 127.0.0.1
+restrict ::1
+# Specify interfaces, don't listen on switch ports
+interface listen eth0
+EOT
+
+# Move NTP to mgmt VRF
+systemctl stop ntp.service
+systemctl disable ntp.service
+systemctl enable ntp@mgmt
+systemctl start ntp@mgmt  
+
+# install air agent
+easy_install3 pip==19.3.1
+git clone -b python3.4 https://gitlab.com/cumulus-consulting/air/air-agent.git
+cd air-agent
+sudo ./install.sh -v mgmt
+
+reboot
+exit 0
+#CUMULUS-AUTOPROVISIONING
