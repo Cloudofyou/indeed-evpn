@@ -1,0 +1,103 @@
+graph dc {
+   "core" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.10"]
+   "coreaggfab" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.11"]
+   "vtepgw1" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.20"]
+   "vtepgw2" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.21"]
+   "sspine01" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.30"]
+   "sspine02" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.31"]
+   "sspine03" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.32"]
+   "sspine04" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.33"]
+   "vtepgw3" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.40"]
+   "vtepgw4" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.41"]
+   "vtepgw5" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.42"]
+   "vtepgw6" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.43"]
+   "podxspine01" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.44"]
+   "podxspine02" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.45"]
+   "pod1vdx" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.50"]
+   "pod2vdx" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.51"]
+   "pod3vdx" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.52"]
+   "pod4vdx" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.53"]
+   "podxtor01" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.54"]
+   "podxtor02" [function="spine" version="3.7.11" ssh_user="cumulus" mgmt_ip="192.168.200.55"]
+   
+   "server01" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.131"]
+   "server02" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.132"]
+   "server03" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.133"]
+   "server04" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.134"]
+   "server05" [function="host" os="generic/ubuntu1804" ssh_user="cumulus" config="tc_files/cldemo2_extra_server_config.sh" mgmt_ip="192.168.200.135"]
+
+   "core":"swp1" -- "coreaggfab":"swp10"
+   "coreaggfab":"swp1" -- "vtepgw1":"swp10"
+   "coreaggfab":"swp2" -- "vtepgw2":"swp10"
+   "vtepgw1":"swp51" -- "vtepgw2":"swp51"
+   "vtepgw1":"swp52" -- "vtepgw2":"swp52"
+   "vtepgw1":"swp1" -- "sspine01":"swp10"
+   "vtepgw1":"swp2" -- "sspine02":"swp10"
+   "vtepgw1":"swp3" -- "sspine03":"swp10"
+   "vtepgw1":"swp4" -- "sspine04":"swp10"
+   "vtepgw2":"swp1" -- "sspine01":"swp11"
+   "vtepgw2":"swp2" -- "sspine02":"swp11"
+   "vtepgw2":"swp3" -- "sspine03":"swp11"
+   "vtepgw2":"swp4" -- "sspine04":"swp11"
+
+   "sspine01":"swp1" -- "vtepgw3":"swp10"
+   "sspine01":"swp2" -- "vtepgw4":"swp10"
+   "sspine01":"swp3" -- "vtepgw5":"swp10"
+   "sspine01":"swp4" -- "vtepgw6":"swp10"
+   "sspine01":"swp5" -- "podxspine01":"swp10"
+   "sspine01":"swp6" -- "podxspine02":"swp10"
+
+   "sspine02":"swp1" -- "vtepgw3":"swp11"
+   "sspine02":"swp2" -- "vtepgw4":"swp11"
+   "sspine02":"swp3" -- "vtepgw5":"swp11"
+   "sspine02":"swp4" -- "vtepgw6":"swp11"
+   "sspine02":"swp5" -- "podxspine01":"swp11"
+   "sspine02":"swp6" -- "podxspine02":"swp11"
+
+   "sspine03":"swp1" -- "vtepgw3":"swp12"
+   "sspine03":"swp2" -- "vtepgw4":"swp12"
+   "sspine03":"swp3" -- "vtepgw5":"swp12"
+   "sspine03":"swp4" -- "vtepgw6":"swp12"
+   "sspine03":"swp5" -- "podxspine01":"swp12"
+   "sspine03":"swp6" -- "podxspine02":"swp12"
+
+   "sspine04":"swp1" -- "vtepgw3":"swp13"
+   "sspine04":"swp2" -- "vtepgw4":"swp13"
+   "sspine04":"swp3" -- "vtepgw5":"swp13"
+   "sspine04":"swp4" -- "vtepgw6":"swp13"
+   "sspine04":"swp5" -- "podxspine01":"swp13"
+   "sspine04":"swp6" -- "podxspine02":"swp13"
+
+   "vtepgw3":"swp51" -- "vtepgw4":"swp51"
+   "vtepgw3":"swp52" -- "vtepgw4":"swp52"
+
+   "vtepgw5":"swp51" -- "vtepgw6":"swp51"
+   "vtepgw5":"swp52" -- "vtepgw6":"swp52"
+
+   "vtepgw3":"swp1" -- "pod1vdx":"swp10"
+   "vtepgw3":"swp2" -- "pod2vdx":"swp10"
+   "vtepgw4":"swp1" -- "pod1vdx":"swp11"
+   "vtepgw4":"swp2" -- "pod2vdx":"swp11"
+
+   "vtepgw5":"swp1" -- "pod3vdx":"swp10"
+   "vtepgw5":"swp2" -- "pod4vdx":"swp10"
+   "vtepgw6":"swp1" -- "pod3vdx":"swp11"
+   "vtepgw6":"swp2" -- "pod4vdx":"swp11"
+
+   "podxspine01":"swp1" -- "podxtor01":"swp10"
+   "podxspine01":"swp2" -- "podxtor02":"swp10"
+   "podxspine02":"swp1" -- "podxtor01":"swp11"
+   "podxspine02":"swp2" -- "podxtor02":"swp11"
+
+   "podxtor01":"swp51" -- "podxtor02":"swp51"
+   "podxtor01":"swp52" -- "podxtor02":"swp52"
+
+   "pod1vdx":"swp1" -- "server01":"eth1"
+   "pod2vdx":"swp1" -- "server02":"eth1"
+   "pod3vdx":"swp1" -- "server03":"eth1"
+   "pod4vdx":"swp1" -- "server04":"eth1"
+
+   "podxtor01":"swp1" -- "server05":"eth1"
+   "podxtor02":"swp1" -- "server05":"eth2" 
+}
+
